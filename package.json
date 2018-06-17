@@ -1,0 +1,20 @@
+{
+  "name": "me",
+  "version": "1.0.0",
+  "description": "somethings of web made by me",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jash8/me.git"
+  },
+  "keywords": [],
+  "author": "josh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jash8/me/issues"
+  },
+  "homepage": "https://jash8.github.io/me/"
+}
