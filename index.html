@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html lang='zh_CN'>
+
 <head>
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<meta http-equiv='X-UA-Compatible' content='ie=edge'>
-<title></title>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <link rel="stylesheet" href="wrap/css/index.css">
+    <title></title>
 </head>
+
 <body>
-<a href="hello/index.html"></a>
+    <section id="app">
+        <header>
+            <nav>
+                <router-link :to="item" v-for="(item,indx) in navCont" :key="indx">{{item}}</router-link>
+            </nav>
+        </header>
+        <main>
+            <router-view></router-view>
+        </main>
+        <footer>
+
+        </footer>
+
+    </section>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script>
+        const NotFound = {
+            template: '<p>Page not found</p>'
+        }
+        const Home = {
+            template: '<p>home page</p>'
+        }
+        const About = {
+            template: '<p>about page</p>'
+        }
+
+        const routes = [{
+            path: '/Home',
+            component: Home
+        }, {
+            path: '/About',
+            component: About
+        }]
+
+        const router = new VueRouter({
+            routes
+        })
+        new Vue({
+            el: '#app',
+            data: {
+                navCont: ['Home', 'About', 'Projects']
+            },
+            router
+        }).$mount('#app')
+    </script>
 </body>
+
 </html>
